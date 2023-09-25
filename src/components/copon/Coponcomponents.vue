@@ -46,7 +46,7 @@ axios.get('../../../public/datacopon.json')
       <div class="card-body ">
         <p class="card-text">{{ coponapis.title }}</p>
         <h5 class="card-title text-success">{{ coponapis.content }}</h5>
-        <h5 class="card-text "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.id }}</h5>
+        <h5 class="card-text text-warning "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.id }}</h5>
     </div>
     </div>
   </div>
@@ -76,12 +76,6 @@ axios.get('../../../public/datacopon.json')
  
     
 }
-/* .row {
-  
-    margin-top: 0 0 0;
-    margin-right: 0 0 0;
-    margin-left: 0 0 0;
-} */
 
 .nav-link {
     display: block;
@@ -92,6 +86,7 @@ axios.get('../../../public/datacopon.json')
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.80rem;
 }
+
 
 
 

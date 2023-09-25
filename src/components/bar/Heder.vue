@@ -16,42 +16,38 @@
     <img src="/src/assets/logo-reward.png" alt=""  class="icons"/>
 </div>
 
-<div class="card ">
-  <div class="iconsetting"><img src="/src/assets/Iconsettings.png" class="rounded float-end "> </div>
-  
- <div class=" mb-3 " >
-  <div class="row g-0 ">
-    <div class="col-md-2">
-      <div class="photoid"> <img src="/src/assets/photoID.jpg"  class="img-fluid  rounded-circle img-thumbnail " alt="..."></div>
-    </div>
 
-    
-    
-    <div class="col-md-5 " v-for="apis in api">
+<div class="card ">
+
+  <div class="container">
+    <div class="iconsetting"><img src="/src/assets/Iconsettings.png" class="rounded float-end "> </div>
+  
+  <div class="row">
+    <div class="col">
+      <div class="photoid"> <img src="/src/assets/photoID.jpg"  class="rounded-circle img-thumbnail " alt="..."></div>
+    </div>
+    <div class="col order-5">
+      <div class="iconscore">
+     <img src="/src/assets/score.png" class="rounded float-end ">
+</div> <br><br>
+<div class="link" > 
+  <a href="#">วิธีการได้คะแนน</a>
+</div>
+<!-- เว้นเอาไว้ -->
+    </div>
+    <div class="col order-1 col-sm-6 col-md-">
+      <div class="text-warning " v-for="apis in api">
         <h5 class="card-title ">{{ apis.firstname }} {{ apis.lastname }}</h5>
-        <p class="card-text"> <img src="/src/assets/phone.png">{{ apis.phone }}</p>
+        <p class="card-text"> {{ apis.phone }}</p>
         <p class="card-text"> {{  apis.id_card }}</p>
         <p class="card-text">{{  apis.birthdate }}</p>
-    
-    </div>
-    
+       </div>
     </div>
   </div>
 </div>
 
 
-<!-- <div class="photoid"> <img src="/src/assets/score.png"  class="rounded float-end  " alt="..."></div> -->
-
-
-
-
-
-      
-  
-
-
-
-   
+</div>
 
     <!-- carousel slide bar -->
    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -95,12 +91,18 @@
 
 
 <style scoped >
-
-
-
-.photoid>img{
-    width: 80px;
+.link{
+  text-align: right;
+  
 }
+.iconscore>img{
+  width: 90px;
+}
+.col>img{
+  width: 100px;
+
+}
+
 .score>img{
     width: 100px;
 }
@@ -134,7 +136,7 @@ box-shadow: 0 30px 50px rgba(0,0,0,.2);
 }
 .card{
     max-width: 500px; 
-    height: 200px;
+    height: 180px;
     background-color: #EEEEE4;
     
 }
