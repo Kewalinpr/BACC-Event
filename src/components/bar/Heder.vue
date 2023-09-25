@@ -18,16 +18,19 @@
 
 <div class="card ">
   <div class="iconsetting"><img src="/src/assets/Iconsettings.png" class="rounded float-end "> </div>
+  
  <div class=" mb-3 " >
   <div class="row g-0 ">
     <div class="col-md-2">
       <div class="photoid"> <img src="/src/assets/photoID.jpg"  class="img-fluid  rounded-circle img-thumbnail " alt="..."></div>
     </div>
 
+    
+    
     <div class="col-md-5 " v-for="apis in api">
         <h5 class="card-title ">{{ apis.firstname }} {{ apis.lastname }}</h5>
-        <p class="card-text">{{ apis.phone }}</p>
-        <p class="card-text">{{  apis.id_card }}</p>
+        <p class="card-text"> <img src="/src/assets/phone.png">{{ apis.phone }}</p>
+        <p class="card-text"> {{  apis.id_card }}</p>
         <p class="card-text">{{  apis.birthdate }}</p>
     
     </div>

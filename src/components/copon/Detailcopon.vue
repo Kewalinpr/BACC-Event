@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import axios from 'axios';
  import {ref} from "vue"
+ import router from '../../routers';
 
  const coponviewapi  = ref();
 
@@ -9,14 +10,25 @@ import axios from 'axios';
   coponviewapi.value=res;
       console.log(res);
   })
+  
+  function gohome() {
+        router.push("/") 
+        // console.log("ee")
+    }
 </script>
 <template>
+
       <div class="head showdow">
-    <img src="/src/assets/logo-reward.png" alt=""  class="icons"/>
-   </div>
+        <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid ">
+    <button @click="gohome" class="btn btn" type="button" > <i class="bi bi-chevron-compact-left"></i></button>
+    <img src="/src/assets/logo-reward.png" alt="" class="icons"/>
+  </div>
+</nav>
+</div>
 
   
-    <div class="card " style="width: 100%;">
+    <div class="card " >
     <img src="/src/assets/copon 10 b.png" class="card-img-top" alt="...">
 
     <div v-for="coponviewapis in coponviewapi" >
@@ -31,6 +43,11 @@ import axios from 'axios';
    
 </template>
 <style scoped>
+img.icons {
+  width: 200px;
+  height: 80px;
+  margin: auto;
+}
 .head{
 
 background-color: #ffffff;
@@ -41,12 +58,7 @@ overflow: hidden;
 
 
 }
-.head>img{
-  width: 200px;
-  height: 80px;
-  margin: auto;
-  
-}
+
 .showdow{
 -webkit-box-shadow: 0 30px 50px rgba(0,0,0,.2);
 box-shadow: 0 30px 50px rgba(0,0,0,.2);

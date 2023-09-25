@@ -4,8 +4,8 @@
 
 <template>
 
-<ul class="nav nav-tabs sticky-top">
-  <li class="nav-item">
+<ul class="nav nav-tabs fixed-bottom nav justify-content-center">
+  <li class="nav-item ">
     <a class="nav-link active" aria-current="page" href="#">สิทธิพิเศษ</a>
   </li>
   <li class="nav-item">
@@ -37,5 +37,15 @@
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: white;
+  
+    width: 100%;
+  } 
 
 </style>

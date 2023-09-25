@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import axios from 'axios';
 import {ref} from "vue"
+// import { useRoute } from 'vue-router';
+import router from '../../routers';
 
 const coponapi  = ref();
 axios.get('../../../public/datacopon.json')
@@ -8,9 +10,17 @@ axios.get('../../../public/datacopon.json')
     coponapi.value=r.data;
       console.log(r);
   })
+
+ 
+    function gocopon() {
+        router.push("/coponview") 
+        // console.log("ee")
+    }
 </script>
 
 <template>
+
+
     <!-- nav -->
      <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
@@ -35,13 +45,13 @@ axios.get('../../../public/datacopon.json')
     <div class="col-md-8">
       <div class="card-body ">
         <p class="card-text">{{ coponapis.title }}</p>
-        <h5 class="card-title ">{{ coponapis.content }}</h5>
-        <p class="card-text">{{ coponapis.id }}</p>
-
-       
-      </div>
+        <h5 class="card-title text-success">{{ coponapis.content }}</h5>
+        <h5 class="card-text "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.id }}</h5>
+    </div>
     </div>
   </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button @click="gocopon" class="btn btn btn-success  " type="button" > <i class="bi bi-arrow-right"></i></button> </div>
 </div>
 
  
@@ -49,7 +59,10 @@ axios.get('../../../public/datacopon.json')
 
 <style scoped>
 
-
+.iconA{
+    width: 40px;
+   
+}
 
 
 .rounded {
@@ -78,8 +91,8 @@ axios.get('../../../public/datacopon.json')
   
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.80rem;
-    
 }
+
 
 
 
