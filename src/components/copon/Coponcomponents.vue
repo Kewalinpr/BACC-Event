@@ -12,10 +12,14 @@ axios.get('../../../public/datacopon.json')
   })
 
  
-    function gocopon() {
-        router.push("/coponview") 
-        // console.log("ee")
+    function gocopon(id :number) {
+        router.push(`/coponview/${id}`) 
+        console.log(id)
     }
+
+  
+
+
 </script>
 
 <template>
@@ -36,8 +40,10 @@ axios.get('../../../public/datacopon.json')
     <!-- nav -->
 
 
-
-<div class="card mb-3 shadow p-0 mb-2 bg-body rounded" v-for ="coponapis in coponapi " style="max-width: 500px;">
+<div v-for ="coponapis in coponapi"> 
+ 
+<div class="card mb-3 shadow p-0 mb-2 bg-body rounded"  :key="coponapis.id" >
+  
   <div class="row g-0">
     <div class="col-md-4 ">
       <img  :src=" coponapis.img "   class="img-fluid rounded-start" alt="...">
@@ -46,13 +52,18 @@ axios.get('../../../public/datacopon.json')
       <div class="card-body ">
         <p class="card-text">{{ coponapis.title }}</p>
         <h5 class="card-title text-success">{{ coponapis.content }}</h5>
-        <h5 class="card-text text-warning "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.id }}</h5>
+        <h5 class="card-text text-warning "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.price }}</h5>
     </div>
     </div>
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button @click="gocopon" class="btn btn btn-success  " type="button" > <i class="bi bi-arrow-right"></i></button> </div>
-</div>
+         
+        <button @click="gocopon(coponapis.id)" class="btn btn btn-success" type="button" > <i class="bi bi-arrow-right"></i></button> 
+          
+      </div>
+     </div>
+
+     </div>
 
  
 </template>

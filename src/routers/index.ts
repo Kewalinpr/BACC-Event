@@ -7,8 +7,9 @@ import Historyview from "../view/Historyview.vue";
 const routes = [
     
     { path: "/", name: "home-page", component: Home },
-    { path: "/coponview", name: "copon-page", component: Coponview },
+    { path: "/coponview/:id", name: "copon-page", component: Coponview },
     { path: "/historyview", name: "history-page", component: Historyview }
+    
 
 
 ];

@@ -5,8 +5,7 @@
     <div class="page-size">
       <router-view></router-view>
     </div>
-<!-- 
-    <div>test</div> -->
+
  
 
     

@@ -19,33 +19,23 @@
 
 <div class="card ">
 
-  <div class="container">
-    <div class="iconsetting"><img src="/src/assets/Iconsettings.png" class="rounded float-end "> </div>
-  
-  <div class="row">
-    <div class="col">
-      <div class="photoid"> <img src="/src/assets/photoID.jpg"  class="rounded-circle img-thumbnail " alt="..."></div>
-    </div>
-    <div class="col order-5">
-      <div class="iconscore">
-     <img src="/src/assets/score.png" class="rounded float-end ">
-</div> <br><br>
-<div class="link" > 
-  <a href="#">วิธีการได้คะแนน</a>
-</div>
-<!-- เว้นเอาไว้ -->
-    </div>
-    <div class="col order-1 col-sm-6 col-md-">
-      <div class="text-warning " v-for="apis in api">
-        <h5 class="card-title ">{{ apis.firstname }} {{ apis.lastname }}</h5>
-        <p class="card-text"> {{ apis.phone }}</p>
-        <p class="card-text"> {{  apis.id_card }}</p>
-        <p class="card-text">{{  apis.birthdate }}</p>
-       </div>
-    </div>
-  </div>
-</div>
+<div class="iconsetting"><img src="/src/assets/Iconsettings.png" class="rounded float-end "> </div>
 
+<div class="photoid"> <img src="/src/assets/photoID.jpg"  class="rounded-circle img-thumbnail float-start " alt="..."></div>
+<div class="content" v-for="apis in api">
+        <h5>{{ apis.firstname }} {{ apis.lastname }}</h5>
+        <p > {{ apis.phone }}</p>
+        <p > {{  apis.id_card }}</p>
+        <p >{{  apis.birthdate }}</p>
+       </div>
+<div class="imgscore"> <img src="/src/assets/score.png" class=" rounded  float-end "> </div>
+<div class="link"> <a href="#">วิธีการได้คะแนน</a></div>
+
+
+
+
+
+       
 
 </div>
 
@@ -93,18 +83,8 @@
 <style scoped >
 .link{
   text-align: right;
+  text-decoration: underline;
   
-}
-.iconscore>img{
-  width: 90px;
-}
-.col>img{
-  width: 100px;
-
-}
-
-.score>img{
-    width: 100px;
 }
 
 .head{
@@ -136,14 +116,36 @@ box-shadow: 0 30px 50px rgba(0,0,0,.2);
 }
 .card{
     max-width: 500px; 
-    height: 180px;
+    height: 500px;
     background-color: #EEEEE4;
+    padding-left: 10px;
+    margin:0 ;
     
 }
 .iconsetting>img{
   width: 20px;
-  
 }
+.photoid>img{
+  width: 80px;
+ 
+}
+.imgscore>img{
+  width: 80px;
+  
+
+}
+
+.link>a{
+width: 50px;
+}
+.content{
+ 
+  width: 400px;
+  text-align-last: center;
+  display: block;
+ 
+}
+
 
    
 </style>
