@@ -2,9 +2,13 @@
 
 <template>
 
-    <div class="page-size">
+   
+
+    <div class="position-relative w-100 h-100">
+      <div class="page-size">
       <router-view></router-view>
     </div>
+  </div>
 
  
 
@@ -18,6 +22,7 @@
   width:500px;
   height: auto;
   background-color: rgb(255, 255, 255);
+  height: auto;
   
 }
 </style>

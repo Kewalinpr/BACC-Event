@@ -39,28 +39,30 @@ axios.get('../../../public/datacopon.json')
   </ul>
     <!-- nav -->
 
-
+<br>
 <div v-for ="coponapis in coponapi"> 
  
 <div class="card mb-3 shadow p-0 mb-2 bg-body rounded"  :key="coponapis.id" >
   
-  <div class="row g-0">
-    <div class="col-md-4 ">
+  <div class="row">
+    <div class="col-md-5 ">
       <img  :src=" coponapis.img "   class="img-fluid rounded-start" alt="...">
     </div>
-    <div class="col-md-8">
-      <div class="card-body ">
+    <div class="col-md-5">
+      <div class="card-body-md-8 ">
+        
         <p class="card-text">{{ coponapis.title }}</p>
         <h5 class="card-title text-success">{{ coponapis.content }}</h5>
-        <h5 class="card-text text-warning "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.price }}</h5>
-    </div>
-    </div>
-  </div>
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-         
-        <button @click="gocopon(coponapis.id)" class="btn btn btn-success" type="button" > <i class="bi bi-arrow-right"></i></button> 
-          
+        <h5 class="card-text text-warning  "><img src="src/assets/logo-A.png" class="iconA">{{ coponapis.price }}
+          <button @click="gocopon(coponapis.id)" class="btn btn btn-success" type="button" > <i class="bi bi-arrow-right"></i></button>
+        </h5>
+        
       </div>
+       
+    </div>
+    
+  </div>
+  
      </div>
 
      </div>
@@ -71,7 +73,10 @@ axios.get('../../../public/datacopon.json')
 <style scoped>
 
 .iconA{
-    width: 40px;
+    width: 30px;
+
+    margin-right:500px;
+    
    
 }
 
@@ -95,7 +100,13 @@ axios.get('../../../public/datacopon.json')
 .card {
   
     border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.80rem;
+    border-radius: 0.90rem;
+}
+.col-md-5 >img{
+  object-fit: cover;
+  border-radius: 0.90rem;
+ 
+ 
 }
 
 

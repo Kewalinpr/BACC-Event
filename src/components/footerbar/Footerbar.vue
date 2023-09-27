@@ -5,6 +5,7 @@
 <template>
 
 <ul class="nav nav-tabs fixed-bottom nav justify-content-center">
+
   <li class="nav-item ">
     <a class="nav-link active" aria-current="page" href="#">สิทธิพิเศษ</a>
   </li>
@@ -20,7 +21,6 @@
 </ul>
 
 
-
 </template>
 
 <style scoped>
@@ -34,6 +34,7 @@
     display: block;
     padding: 0.5rem 1rem;
     color: #009F47;
+    border-color: #D6C47D;
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
@@ -43,9 +44,16 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-    background-color: white;
-  
+    background-color: rgb(255, 255, 255);
+    text-align: center;
     width: 100%;
   } 
 
+
+
+
+
+
+
+  
 </style>
