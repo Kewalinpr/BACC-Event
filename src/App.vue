@@ -21,8 +21,9 @@
 
   width:500px;
   height: auto;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(241, 237, 237);
   height: auto;
+  border: 3px;
   
 }
 </style>

@@ -4,51 +4,65 @@
 
 <template>
 
-<ul class="nav nav-tabs fixed-bottom nav justify-content-center">
-
-  <li class="nav-item ">
-    <a class="nav-link active" aria-current="page" href="#">สิทธิพิเศษ</a>
+<ul>
+  <li>
+    <img src="/src/assets/iconB.png" alt="" class="icons" />
+    <a  href="#home">สิทธิพิเศษ</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">กิจกรรม</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">ประวัติคะแนน</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link " href="#" >ประวัติแลกของรางวัล</a>
-  </li>
+  <li><img src="/src/assets/iconB.png" alt="" class="icons" />
+    <a href="#news">กิจกรรม</a></li>
+  <li><img src="/src/assets/iconB.png" alt="" class="icons" />
+    <a href="#contact">ประวัติคะแนน</a></li>
+  <li><img src="/src/assets/iconB.png" alt="" class="icons" />
+    <a href="#about">ประวัติแลกของรางวัล</a></li>
 </ul>
+
+
 
 
 </template>
 
 <style scoped>
+ ul {
+  list-style-type: none;
 
-.nav-tabs .nav-item.show .nav-link[data-v-2d242c48], .nav-tabs .nav-link.active[data-v-2d242c48] {
-    color: #009F47;
-    background-color: #D6C47D;
-    border-color: #D6C47D;
+  overflow: hidden;
+  background-color: #a90808;
+  
 }
-.nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #009F47;
-    border-color: #D6C47D;
-    text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+.ul>a{
+  font-size: 3px;
 }
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    width: 100%;
-  } 
 
+li {
+  float: left;
+  border-right:1px solid #bbb;
+
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: #C3A948;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background: transparent linear-gradient(0deg, #C3A948 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+}
+.icons{
+  width: 50px;
+  padding: 1px;
+}
 
 
 
