@@ -1,20 +1,36 @@
 <script setup lang="ts">
+import router from "../../routers";
 
+        function gohistory() {
+        router.push("/historyview"); }
 </script>
 
 <template>
 
-<ul>
-  <li>
-    <img src="/src/assets/iconB.png" alt="" class="icons" />
-    <a  href="#home">สิทธิพิเศษ</a>
+
+
+<ul class="nav  nav-justified">
+   
+  
+  <li class="nav-item">
+     
+    <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
   </li>
-  <li><img src="/src/assets/iconB.png" alt="" class="icons" />
-    <a href="#news">กิจกรรม</a></li>
-  <li><img src="/src/assets/iconB.png" alt="" class="icons" />
-    <a href="#contact">ประวัติคะแนน</a></li>
-  <li><img src="/src/assets/iconB.png" alt="" class="icons" />
-    <a href="#about">ประวัติแลกของรางวัล</a></li>
+  <li class="nav-item">
+    
+    <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
+  </li>
+  <li class="nav-item">
+ 
+    <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
+  </li>
+  <li class="nav-item">
+   
+     <button class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></button> 
+    
+    
+  </li>
+
 </ul>
 
 
@@ -23,51 +39,50 @@
 </template>
 
 <style scoped>
- ul {
+ ul{
   list-style-type: none;
-
   overflow: hidden;
-  background-color: #a90808;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  width: 500px;
   
 }
-.ul>a{
-  font-size: 3px;
+  
+
+li>img{
+  width: 35px;
+  /* padding-top: 5px; */
+  margin-top: 5px;
 }
 
 li {
   float: left;
-  border-right:1px solid #bbb;
+  border-right:1px solid#C3A948;
+
 
 }
 
-li:last-child {
-  border-right: none;
-}
+
 
 li a {
   display: block;
-  color: #C3A948;
+  color: #009F47;
   text-align: center;
-  padding: 14px 14px;
+  padding: 0;
   text-decoration: none;
+  font-size: 13px;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #cbc381;
+  color: #009F47;
 }
 
 .active {
   background: transparent linear-gradient(0deg, #C3A948 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-}
-.icons{
-  width: 50px;
-  padding: 1px;
+  color: #009F47;
 }
 
 
-
-
-
-
-  
 </style>

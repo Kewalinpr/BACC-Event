@@ -16,12 +16,7 @@
     <img src="/src/assets/logo-reward.png" alt=""  class="icons"/>
 </div>
 
-
-
-
-
-
-  <div id="container">
+<div id="container">
   
   <div class="box" id="box1"> <div class="photoid"> <img src="/src/assets/photoID.jpg"  class="rounded-circle  float-start " alt="..."></div></div>
   <div class="box" id="box4"> <img src="/src/assets/phone.png"> 
@@ -81,13 +76,13 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/src/assets/slide-2.jpg" class="d-block w-100" alt="...">
+      <img src="/src/assets/slide-3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         
       </div>
     </div>
     <div class="carousel-item">
-      <img src="/src/assets/slide-3.jpg" class="d-block w-100" alt="...">
+      <img src="/src/assets/slide-4.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         
       </div>
@@ -109,7 +104,9 @@
 
 <style scoped >
 
-
+.carousel-item>img{
+  height: 200px;
+}
 
 .head{
 
