@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios';
 import {ref} from "vue"
-// import { useRoute } from 'vue-router';
 import router from '../../routers';
 
 const coponapi  = ref();
@@ -10,10 +9,11 @@ axios.get('../../../public/datacopon.json')
     coponapi.value=r.data;
       console.log(r);
   })
-        function gocopon(id :number) {
-        router.push(`/coponview/${id}`) 
-        console.log(id)
-    }
+
+function gocopon(id :number) {
+router.push(`/coponview/${id}`) 
+console.log(id)}
+
 
   </script>
 
@@ -40,7 +40,7 @@ axios.get('../../../public/datacopon.json')
     <!-- nav -->
 
 <div class="pivilate"> 
-<div class="card mb-2 shadow p-0" >
+<div class="card mb-0 shadow p-0" >
 <div class="row ">
   <div class="col-md-5">
     <img  :src=" coponapis.img "   class="card-img-top" alt="...">
@@ -54,7 +54,10 @@ axios.get('../../../public/datacopon.json')
       <h5 class=" content fontW">{{ coponapis.content3 }}</h5>
       <h5 class=" content fontW">{{ coponapis.content4 }}</h5>
         <div class="row ">
-        <div class="col-6 d-flex justify-content-start"> <h5 class="price"> <img src="src/assets/logo-A.png" class="iconA"> {{ coponapis.price }} </h5>  </div>
+        <div class="col-6 d-flex justify-content-start"> 
+          <div class="pointimg"> <img src="src/assets/logo-A.png" class="iconA">  </div>
+           <div><p v-html="coponapis.price"></p></div>
+        </div>
         <div class="col-6 d-flex justify-content-end"> <button @click="gocopon(coponapis.id)" class="button1 " type="button" > <i class="bi bi-arrow-right"></i></button> </div>
       </div>
    </div>
@@ -71,11 +74,16 @@ axios.get('../../../public/datacopon.json')
 </template>
 
 <style scoped>
+
+.pointimg{
+  padding-right: 5px;
+}
 .fontW{
   font-weight: bold;
 }
 .pivilate{
-  padding: 10px;
+  padding: 8px;
+ 
 }
 .cardcontent{
 padding-top: 5px;
@@ -85,13 +93,11 @@ padding-top: 5px;
 width: 40px;
 height:  44px;
 color: #ffffff;
+font-size:26px;
+
 background-color: #00A347;
 padding: 0px;
 margin: 0px;
-
-border-top-right-radius: 0%;
-border-top-left-radius: 0%;
-border-bottom-left-radius: 0%;
 border-bottom-right-radius: 25%;
 }
 
@@ -115,11 +121,11 @@ button {
 .iconA{
     width: 26px;
 }
-.price{
+/* .price{
   color: #ce9c07;
   font-size: 15px;
   text-align: center;
-}
+} */
 .content{
   color: #00A347;
   text-align: center;
@@ -171,14 +177,15 @@ button {
     height: 500px;
    text-align:center;
    padding-block: 100px;
-   
+
 }
  .col-md-5 >img{
   object-fit: cover;
   /* border-radius: 0.90rem; */
 width: 206px;
 height: 199px;
-border-radius: 10px 10px 10px 10px;
+border-radius: 10px 0px 0px 10px;
+
 
  
 }

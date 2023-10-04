@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import axios from "axios";
-import { Ref, ref } from "vue";
+import { Ref, ref ,reactive } from "vue";
 import router from "../../routers";
 
 
@@ -13,8 +13,77 @@ axios.get("/public/datacopon.json").then(function (r) {
 
 function gohome() {
   router.push("/");
- 
-}
+ }
+
+//  const props = defineProps({
+//     default: String,
+
+//     digitCount: {
+//       type: Number,
+//       required: true
+//     }
+//   });
+
+//   const digits: Ref<any> = reactive([]);
+
+//   if (props.default && props.default.length === props.digitCount) {
+//     for (let i =0; i < props.digitCount; i++) {
+//       digits[i] = props.default.charAt(i)
+//     }
+//   } else {
+//     for (let i =0; i < props.digitCount; i++) {
+//       digits[i] = null;
+//     }
+//   }
+
+//   const otpCont = ref(null)
+
+
+//   const emit = defineEmits(['update:otp']);
+
+//   const isDigitsFull = function () {
+//     for (const elem of digits) {
+//       if (elem == null || elem == undefined) {
+//         return false;
+//       }
+//     }
+
+//     return true;
+//   }
+
+//   const handleKeyDown = function (event, index) {
+//     if (event.key !== "Tab" && 
+//         event.key !== "ArrowRight" &&
+//         event.key !== "ArrowLeft"
+//     ) {
+//       event.preventDefault();
+//     }
+    
+//     if (event.key === "Backspace") {
+//       digits[index] = null;
+      
+//       if (index != 0) {
+//         (otpCont.value.children)[index-1].focus();
+//       } 
+
+//       return;
+//     }
+
+//     if ((new RegExp('^([0-9])$')).test(event.key)) {
+//       digits[index] = event.key;
+
+//       if (index != props.digitCount - 1) {
+//         (otpCont.value.children)[index+1].focus();
+//       }
+
+//       if (isDigitsFull()) {
+//         emit('update:otp', digits.join(''))
+//       }
+//     }
+//   }
+
+
+
 
 </script>
 <template>
@@ -39,7 +108,7 @@ function gohome() {
       <br><br>
       <div class=" d-flex justify-content-between">
         <div class="fontW">จำนวน</div>
-        <div class="fontcolor">1</div>
+        <div class="fontcolor fontW">1</div>
       </div>
 
       <div class=" d-flex justify-content-between">
@@ -124,13 +193,23 @@ function gohome() {
          
         <div class="modal-body">
           
-          <div class="row">
+          <div ref="container" class="row">
             <!-- input OTP-->
            
-            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />
-            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />
-            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />
-            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />  
+            <!-- <div ref="otpCont">
+    <input
+      type="text"
+      class="digit-box"
+      v-for="(el, ind) in digits"
+      :key="el+ind"
+      v-model="digits[ind]"
+      :autofocus="ind === 0"
+      :placeholder="ind+1"
+      maxlength="1"
+      @keydown="handleKeyDown($event, ind)"
+      :class="{bounce: digits[ind] !== null}"
+    >
+  </div> -->
           </div>
         </div>
         <br><br>

@@ -4,16 +4,16 @@ import {ref} from "vue";
 import router from "../../routers";
 
 const  coponhitory  = ref();
-axios.get("/public/historycoupon.json")
+
+axios.get("/public/historycoupon.json") 
 .then(function (h) {
-  coponhitory.value = h.data;
- 
+coponhitory.value = h.data;
 });
 
 function gohome() {
   router.push("/");}
-
-</script>
+  
+  </script>
 
 <template>
      <div class="head showdow">
@@ -30,21 +30,22 @@ function gohome() {
   <div class="cardhitory" > 
 
     <div class="content1"> 
-       <h5>ประวัติแลกของรางวัล</h5>
+       <h5 class="fontW">ประวัติแลกของรางวัล</h5>
        <div class="lines"><hr></div>
-    
-    <div class="content" v-for="coponhitorys in coponhitory">
-
-    
-     <div class="row g--1"> 
-     
-        <div class="col">
+       <div class="content" v-for="coponhitorys in coponhitory">
+    <div class="row g--1"> 
+      <div class="col">
           <div  class="icon"> <img :src="coponhitorys.img_reward" class="img-fluid" />   </div>
-        </div>
+      </div>
         <div class="col-7">
           <div class=" d-flex justify-content-between">
           <div> <h6 v-html="coponhitorys.content"> </h6> </div> 
+          <div class="row ">
+          <div class="col-6 d-flex justify-content-start"> 
+          <div class="pointimg"> <img src="src/assets/logo-A.png" class="iconA">  </div>
           <div > <p  v-html="coponhitorys.point" > </p>  </div>
+        </div>
+        </div>
         </div>
    <hr>
           <div class=" d-flex justify-content-between ">
@@ -56,42 +57,42 @@ function gohome() {
          <div class="">{{coponhitorys.status1}}</div>
          <div><p v-html="coponhitorys.status2" ></p> </div>
         </div>
-    
      </div>
     
   </div>
-  <div class="line"><hr></div>
- </div>
-  <p class="p">สงวนลิขสิทธิ์ 2019 ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร</p>
+      <div class="line"><hr></div>
+  </div>
+      <p class="p">สงวนลิขสิทธิ์ 2019 ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร</p>
 </div>
 
 </div>
-<ul class="nav  nav-justified">
-   
-  
-   <li class="nav-item">
-      
-     <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
-   </li>
-   <li class="nav-item">
-     
-     <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
-   </li>
-   <li class="nav-item">
-  
-     <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
-   </li>
-   <li class="nav-item">
-    
-   <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
-     
-     
-   </li>
- 
- </ul>
+      <ul class="nav  nav-justified">
+        <li class="nav-item">
+           <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
+      </li>
+    </ul>
 </template>
+
+
 <style scoped>
 
+.fontW{
+  font-weight: bold;
+}
+.iconA{
+  width: 25px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
 .p{
 padding-top: 50px;
 }
@@ -224,5 +225,6 @@ li a:hover:not(.active) {
 }
 .btn {
  color:  #cbc381;
+ font-size:26px;
 }
 </style>

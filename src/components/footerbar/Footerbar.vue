@@ -6,35 +6,20 @@ import router from "../../routers";
 </script>
 
 <template>
-
-
-
 <ul class="nav  nav-justified">
-   
-  
-  <li class="nav-item">
-     
-    <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
+   <li class="nav-item">
+      <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
   </li>
   <li class="nav-item">
-    
-    <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
+      <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
   </li>
   <li class="nav-item">
- 
-    <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
+      <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
   </li>
   <li class="nav-item">
-   
-  <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
-    
-    
+      <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
   </li>
-
 </ul>
-
-
-
 
 </template>
 
@@ -69,7 +54,6 @@ li a:hover:not(.active) {
 }
 .nav{
   background-color: #ffffff;
-  
   color: #ffffff;
   padding: 5px;
   font-size: 10px;
@@ -79,8 +63,5 @@ li a:hover:not(.active) {
   width: 500px;
   height: 70px;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
-
 }
-
-
 </style>
