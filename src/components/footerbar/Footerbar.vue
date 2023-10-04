@@ -26,7 +26,7 @@ import router from "../../routers";
   </li>
   <li class="nav-item">
    
-     <button class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></button> 
+  <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
     
     
   </li>
@@ -39,6 +39,9 @@ import router from "../../routers";
 </template>
 
 <style scoped>
+.nav-link>img{
+  width: 42px;
+}
  ul{
   list-style-type: none;
   overflow: hidden;
@@ -46,25 +49,12 @@ import router from "../../routers";
   position: fixed;
   bottom: 0;
   width: 500px;
-  
 }
-  
-
-li>img{
-  width: 35px;
-  /* padding-top: 5px; */
-  margin-top: 5px;
-}
-
 li {
   float: left;
-  border-right:1px solid#C3A948;
-
-
+  border-right:1.2px solid#C3A948;
+  height: 56px;
 }
-
-
-
 li a {
   display: block;
   color: #009F47;
@@ -73,15 +63,23 @@ li a {
   text-decoration: none;
   font-size: 13px;
 }
-
 li a:hover:not(.active) {
   background-color: #cbc381;
   color: #009F47;
 }
+.nav{
+  background-color: #ffffff;
+  
+  color: #ffffff;
+  padding: 5px;
+  font-size: 10px;
+  position: fixed;
+  bottom: -9px;
+  margin-bottom: 10px;
+  width: 500px;
+  height: 70px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 
-.active {
-  background: transparent linear-gradient(0deg, #C3A948 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-  color: #009F47;
 }
 
 

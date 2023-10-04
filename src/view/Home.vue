@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import HeaderBar from "../components/bar/Heder.vue";
+import HeaderBar from "../components/bar/header.vue";
 import Coponcomponents from "../components/copon/Coponcomponents.vue";
 import Footerbar from "../components/footerbar/Footerbar.vue";
 

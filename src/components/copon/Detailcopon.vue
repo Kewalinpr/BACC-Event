@@ -8,13 +8,14 @@ const coponapi: Ref<any> = ref([]);
 console.log(coponapi, "123456");
 axios.get("/public/datacopon.json").then(function (r) {
   coponapi.value = r.data;
-  //  console.log(r);
+ 
 });
 
 function gohome() {
   router.push("/");
-  // console.log("ee")
+ 
 }
+
 </script>
 <template>
   <div class="head showdow">
@@ -37,17 +38,14 @@ function gohome() {
       <img :src="coponapis.img_reward" class="card-img-top" alt="..." />
       <br><br>
       <div class=" d-flex justify-content-between">
-        <div class="">จำนวน</div>
-        <div class="">1</div>
+        <div class="fontW">จำนวน</div>
+        <div class="fontcolor">1</div>
       </div>
 
       <div class=" d-flex justify-content-between">
-        <div class="">คะแนน</div>
-        <div class="">
-          <img src="/src/assets/iconC.png" class="icon" /> {{ coponapis.price }}
-        </div>
-      </div>
-      <hr />
+        <div class="fontW">คะแนน</div>
+        <div class=" d-flex justify-content-between"> <img src="/src/assets/iconC.png" class="icon" ><p v-html="coponapis.price"> </p></div> </div>
+      <hr>
       <p3 v-html="coponapis.title1"> </p3>
       <p v-html="coponapis.condition"></p>
     </div>
@@ -128,11 +126,11 @@ function gohome() {
           
           <div class="row">
             <!-- input OTP-->
-       
-            <input type="num" minlength="1" maxlength="1" size="1" class="col form-control input-group mx-3" />
-            <input type="num" minlength="1" maxlength="1" size="1" class="col form-control input-group mx-3" />
-            <input type="num" minlength="1" maxlength="1" size="1" class="col form-control input-group mx-3" />
-            <input type="num" minlength="1" maxlength="1" size="1" class="col form-control input-group mx-3" />
+           
+            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />
+            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />
+            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />
+            <input type="text"  maxlength="1"  class="col form-control input-group mx-3" />  
           </div>
         </div>
         <br><br>
@@ -216,11 +214,17 @@ function gohome() {
 }
 hr {
   color: #a58d29;
-}
+  margin: 0;
+  border: 0;
+  opacity: 25;
+  margin-bottom: 20px;
+ }
+
 img.icons {
   width: 200px;
   height: 80px;
   margin: auto;
+  padding-right: 20px;
 }
 .head {
   background-color: #ffffff;
@@ -238,11 +242,14 @@ img.icons {
   background-color: antiquewhite;
 }
 .icon {
-  width: 30px;
+  width: 45px;
+  height: 55px;
+ padding-right: 10px;
+ padding-bottom: 30px;
 }
 .card {
   width: 500px;
-  height: 100%;
+  height: 850px;
  
   background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
 }
@@ -250,7 +257,7 @@ img.icons {
   background-color: #efefe5;
   padding: 30px;
   border-radius: 20px;
-  max-height: 100vh;
+  max-height: 500vh;
   height: 100%;
   opacity: 0.9;
 }
@@ -258,17 +265,19 @@ img.icons {
   background-color: #00a051;
   border-radius: 30px;
   color: #ffffff;
-  padding: 20px;
-  font-size: 20px;
+  padding: 0px;
+  font-size: 25px;
   position: fixed;
   bottom: 0px;
   margin: 1rem;
   width: 400px;
+ height: 50px;
+
  }
 
  .modal-content {
     position: relative; 
-   display: flex;
+    display: flex;
     flex-direction: column;
     width: 100%;
     padding: 50px;
@@ -331,6 +340,12 @@ border-top:none;
     padding: 8px;
     width: 100%;
     font-size: 25px;
+}
+.fontW{
+  font-weight: bold;
+}
+.fontcolor{
+  color: #A58D29;
 }
 
 

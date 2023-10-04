@@ -6,6 +6,10 @@ import router from "./routers/index.ts";
 
 
 
+
+
+
+
 const pinia = createPinia()
 const app = createApp(App);
 app.use(router);

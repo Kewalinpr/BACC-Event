@@ -18,12 +18,14 @@
 <style >
 
 .page-size{
-
+  max-width: 500vh;
   width:500px;
   height: auto;
-  background-color: rgb(241, 237, 237);
+  background-color: rgb(255, 255, 255);
   height: auto;
   border: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  
   
 }
 </style>

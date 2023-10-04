@@ -39,7 +39,7 @@ axios.get('../../../public/datacopon.json')
 
     <!-- nav -->
 
-
+<div class="pivilate"> 
 <div class="card mb-2 shadow p-0" >
 <div class="row ">
   <div class="col-md-5">
@@ -49,10 +49,10 @@ axios.get('../../../public/datacopon.json')
   <div class="col">
     <div class="cardcontent">
       <p>{{ coponapis.title }}</p>
-      <h4 class=" content">{{ coponapis.content1 }}</h4>
-      <h4 class=" content">{{ coponapis.content2 }}</h4>
-      <p class=" content">{{ coponapis.content3 }}</p>
-      <p class=" content">{{ coponapis.content4 }}</p>
+      <h4 class=" content fontW">{{ coponapis.content1 }}</h4>
+      <h4 class=" content fontW">{{ coponapis.content2 }}</h4>
+      <h5 class=" content fontW">{{ coponapis.content3 }}</h5>
+      <h5 class=" content fontW">{{ coponapis.content4 }}</h5>
         <div class="row ">
         <div class="col-6 d-flex justify-content-start"> <h5 class="price"> <img src="src/assets/logo-A.png" class="iconA"> {{ coponapis.price }} </h5>  </div>
         <div class="col-6 d-flex justify-content-end"> <button @click="gocopon(coponapis.id)" class="button1 " type="button" > <i class="bi bi-arrow-right"></i></button> </div>
@@ -61,7 +61,7 @@ axios.get('../../../public/datacopon.json')
   </div>
 </div>
 </div>
-
+</div>
 </div>
 </div>
 </div>
@@ -71,19 +71,28 @@ axios.get('../../../public/datacopon.json')
 </template>
 
 <style scoped>
+.fontW{
+  font-weight: bold;
+}
+.pivilate{
+  padding: 10px;
+}
 .cardcontent{
 padding-top: 5px;
+
 }
 .button1{
 width: 40px;
+height:  44px;
 color: #ffffff;
 background-color: #00A347;
 padding: 0px;
 margin: 0px;
+
 border-top-right-radius: 0%;
 border-top-left-radius: 0%;
 border-bottom-left-radius: 0%;
-border-bottom-right-radius: 30%;
+border-bottom-right-radius: 25%;
 }
 
 
@@ -115,6 +124,7 @@ button {
   color: #00A347;
   text-align: center;
   line-height: 0.9;
+
 }
 .card-body>p{
   line-height: 0.5;
@@ -152,6 +162,7 @@ button {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.90rem;
     height: 200px;
+    
 }
 
 .card1{
@@ -160,6 +171,7 @@ button {
     height: 500px;
    text-align:center;
    padding-block: 100px;
+   
 }
  .col-md-5 >img{
   object-fit: cover;
@@ -167,10 +179,17 @@ button {
 width: 206px;
 height: 199px;
 border-radius: 10px 10px 10px 10px;
+
  
 }
-
-@media (prefers-color-scheme: light)
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    
+}
 
 
 </style>

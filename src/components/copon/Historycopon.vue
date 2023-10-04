@@ -66,7 +66,7 @@ function gohome() {
 </div>
 
 </div>
-<ul class="nav nav-justified">
+<ul class="nav  nav-justified">
    
   
    <li class="nav-item">
@@ -83,13 +83,12 @@ function gohome() {
    </li>
    <li class="nav-item">
     
-      <button class="nav-link"><img src="/src/assets/footericon.png"> <br> ประวัติแลกของรางวัล</button> 
+   <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
      
      
    </li>
  
  </ul>
-   
 </template>
 <style scoped>
 
@@ -145,7 +144,7 @@ padding:  0.8px;
   font-size: 15px;
  
  
- /* opacity: 0.9; */
+ opacity: 0.9;
 }
 .p{
 padding-top: 100px;
@@ -159,9 +158,9 @@ padding-top: 100px;
   opacity: 0.9;
 }
 .cardhitory {
-  width: 500px;
+  /* width: 500px; */
   height: 100%;
-  padding: 20px;
+  padding: 18px;
 padding-bottom: 100px;
   background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
 }
@@ -182,32 +181,22 @@ img.icons {
   -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
 }
-ul{
+.nav-link>img{
+  width: 42px;
+}
+ ul{
   list-style-type: none;
   overflow: hidden;
   background-color: #ffffff;
   position: fixed;
   bottom: 0;
   width: 500px;
-  height: 70px;
-  
 }
-  
-
-li>img{
-  width: 35px;
-  margin-top: 5px;
-}
-
 li {
   float: left;
-  border-right:1px solid#C3A948;
-
-
+  border-right:1.2px solid#C3A948;
+  height: 56px;
 }
-
-
-
 li a {
   display: block;
   color: #009F47;
@@ -216,14 +205,24 @@ li a {
   text-decoration: none;
   font-size: 13px;
 }
-
 li a:hover:not(.active) {
   background-color: #cbc381;
   color: #009F47;
 }
-
-.active {
-  background: transparent linear-gradient(0deg, #C3A948 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-  color: #009F47;
+.nav{
+  background-color: #ffffff;
+  
+  color: #ffffff;
+  padding: 5px;
+  font-size: 10px;
+  position: fixed;
+  bottom: -10px;
+  margin-bottom: 10px;
+  width: 500px;
+  height: 70px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.btn {
+ color:  #cbc381;
 }
 </style>
