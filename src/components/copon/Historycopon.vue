@@ -13,7 +13,11 @@ coponhitory.value = h.data;
 function gohome() {
   router.push("/");}
   
+function gohistory() {
+  router.push("/historyview");}
+ 
   </script>
+  
 
 <template>
      <div class="head showdow">

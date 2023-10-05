@@ -1,96 +1,28 @@
 <script setup lang="ts">
 import axios from "axios";
-import { Ref, ref ,reactive } from "vue";
+import { Ref, ref,} from "vue";
 import router from "../../routers";
+import otp from "../copon/Otpinput.vue";
+
+
+const otpValue = ref('')
 
 
 const coponapi: Ref<any> = ref([]);
-console.log(coponapi, "123456");
 axios.get("/public/datacopon.json").then(function (r) {
   coponapi.value = r.data;
  
 });
-
 function gohome() {
-  router.push("/");
- }
-
-//  const props = defineProps({
-//     default: String,
-
-//     digitCount: {
-//       type: Number,
-//       required: true
-//     }
-//   });
-
-//   const digits: Ref<any> = reactive([]);
-
-//   if (props.default && props.default.length === props.digitCount) {
-//     for (let i =0; i < props.digitCount; i++) {
-//       digits[i] = props.default.charAt(i)
-//     }
-//   } else {
-//     for (let i =0; i < props.digitCount; i++) {
-//       digits[i] = null;
-//     }
-//   }
-
-//   const otpCont = ref(null)
-
-
-//   const emit = defineEmits(['update:otp']);
-
-//   const isDigitsFull = function () {
-//     for (const elem of digits) {
-//       if (elem == null || elem == undefined) {
-//         return false;
-//       }
-//     }
-
-//     return true;
-//   }
-
-//   const handleKeyDown = function (event, index) {
-//     if (event.key !== "Tab" && 
-//         event.key !== "ArrowRight" &&
-//         event.key !== "ArrowLeft"
-//     ) {
-//       event.preventDefault();
-//     }
-    
-//     if (event.key === "Backspace") {
-//       digits[index] = null;
-      
-//       if (index != 0) {
-//         (otpCont.value.children)[index-1].focus();
-//       } 
-
-//       return;
-//     }
-
-//     if ((new RegExp('^([0-9])$')).test(event.key)) {
-//       digits[index] = event.key;
-
-//       if (index != props.digitCount - 1) {
-//         (otpCont.value.children)[index+1].focus();
-//       }
-
-//       if (isDigitsFull()) {
-//         emit('update:otp', digits.join(''))
-//       }
-//     }
-//   }
-
-
-
-
+  router.push("/");}
+ 
+ 
 </script>
 <template>
   <div class="head showdow">
     <nav class="navbar">
       <div class="container-fluid">
-        <button @click="gohome" class="btn btn" type="button">
+        <button @click="gohome" class="btn sizebt" type="button">
           <i class="bi bi-chevron-compact-left"></i>
         </button>
         <img src="/src/assets/logo-reward.png" alt="" class="icons" />
@@ -192,24 +124,20 @@ function gohome() {
           <p> ที่ได้รับจากเจ้าหน้าที่เพื่อใช้สิทธิ์</p>
          
         <div class="modal-body">
-          
-          <div ref="container" class="row">
+        <div ref="container" class="row">
             <!-- input OTP-->
-           
-            <!-- <div ref="otpCont">
-    <input
-      type="text"
-      class="digit-box"
-      v-for="(el, ind) in digits"
-      :key="el+ind"
-      v-model="digits[ind]"
-      :autofocus="ind === 0"
-      :placeholder="ind+1"
-      maxlength="1"
-      @keydown="handleKeyDown($event, ind)"
-      :class="{bounce: digits[ind] !== null}"
-    >
-  </div> -->
+            <div class="container">
+            <div class="row justify-content-md-center">
+            <div class="row">
+                    <otp 
+                   :digit-count="4"
+                    @update:otp="otpValue = $event"
+                   ></otp>
+
+              <!-- <p>The current OTP value is: {{ otpValue }} </p> -->
+             </div>
+            </div>
+           </div>
           </div>
         </div>
         <br><br>
@@ -219,16 +147,14 @@ function gohome() {
             class="btn btn-primary"
             data-bs-dismiss="modal"
             data-bs-toggle="modal"
-            data-bs-target="#confirm_otp"
-          >
+            data-bs-target="#confirm_otp">
             ยืนยัน
           </button>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Modal ทำการแลกสิทธ์เรียบร้อยแล้ว-->
+<!-- Modal ทำการแลกสิทธ์เรียบร้อยแล้ว-->
   <div
     class="modal fade"
     id="confirm_otp"
@@ -260,7 +186,10 @@ function gohome() {
   </div>
 </template>
 <style scoped>
-
+.sizebt {
+ color:  #cbc381;
+ font-size:26px;
+}
 .modal-body {
   padding: 0px;
 }
@@ -426,6 +355,8 @@ border-top:none;
 .fontcolor{
   color: #A58D29;
 }
+
+/* ..... */
 
 
 

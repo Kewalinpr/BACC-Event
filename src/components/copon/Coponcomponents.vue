@@ -13,25 +13,23 @@ axios.get('../../../public/datacopon.json')
 function gocopon(id :number) {
 router.push(`/coponview/${id}`) 
 console.log(id)}
-
-
-  </script>
+</script>
 
 <template>
 <!-- nav -->
     <ul class="nav nav-justified mb-2 " id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
     <button class="nav-link " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">ทั้งหมด</button>
-  </li>
-  <li class="nav-item" role="presentation">
+     </li>
+    <li class="nav-item" role="presentation">
     <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">ส่วนลดร้านค้า</button>
-  </li>
-  <li class="nav-item" role="presentation">
+     </li>
+    <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"  aria-selected="true">อีเวนท์</button>
-  </li>
-</ul>
+    </li>
+   </ul>
 
-<div class="tab-content" id="pills-tabContent">
+  <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><div class="card1">เร็วๆนี้</div></div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><div class="card1">เร็วๆนี้</div></div>
   <div class="tab-pane fade  show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><div v-for ="coponapis in coponapi"> 
@@ -100,26 +98,19 @@ padding: 0px;
 margin: 0px;
 border-bottom-right-radius: 25%;
 }
-
-
-
 button {
-    border-radius: 0px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-
-  
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #ffffff;
-    cursor: pointer;
-    transition: border-color 0.25s;
+border-radius: 0px;
+border: 1px solid transparent;
+padding: 0.6em 1.2em;
+font-size: 1em;
+font-weight: 500;
+font-family: inherit;
+background-color: #ffffff;
+cursor: pointer;
+transition: border-color 0.25s;
 }
-
-
 .iconA{
-    width: 26px;
+width: 26px;
 }
 /* .price{
   color: #ce9c07;
@@ -127,74 +118,65 @@ button {
   text-align: center;
 } */
 .content{
-  color: #00A347;
-  text-align: center;
-  line-height: 0.9;
-
+color: #00A347;
+text-align: center;
+line-height: 0.9;
 }
 .card-body>p{
-  line-height: 0.5;
+line-height: 0.5;
 }
-
 .nav-justified .nav-link.active, .show>.nav-link  {
-    color:  #ffffff;
-    background-color:#A98C00;
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    width: 150px;
+color:  #ffffff;
+background-color:#A98C00;
+width: 100%;
+padding-right: 0;
+padding-left: 0;
+width: 150px;
   }
 .nav{
-  justify-content: center;
-  background-color: #ffffff;
-  width: 500px;
-  -webkit-box-shadow: 0 10px 200px rgba(0,0,0,.2);
-  box-shadow: 0 3px 3px rgba(0,0,0,.2);
-  text-align: center;
-  list-style-type: none;
+justify-content: center;
+background-color: #ffffff;
+width: 500px;
+-webkit-box-shadow: 0 10px 200px rgba(0,0,0,.2);
+box-shadow: 0 3px 3px rgba(0,0,0,.2);
+text-align: center;
+list-style-type: none;
 }
 .nav-item[data-v-51038dcf] {
-    /* width: 150px; */
-     border-right: 2px solid rgba(0, 0, 0, 0.15);
+/* width: 150px; */
+ border-right: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .nav-link {
-    text-align: center;
-   
-    color: #00A347;
+text-align: center;
+color: #00A347;
 }
 .card {
-  
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.90rem;
-    height: 200px;
-    
+border: 1px solid rgba(0, 0, 0, 0.15);
+border-radius: 0.90rem;
+height: 200px;
 }
-
 .card1{
   /* border: 1px solid rgba(0, 0, 0, 0.15); */
-    border-radius: 0.90rem;
-    height: 500px;
-   text-align:center;
-   padding-block: 100px;
+border-radius: 0.90rem;
+height: 500px;
+text-align:center;
+padding-block: 100px;
 
 }
- .col-md-5 >img{
-  object-fit: cover;
-  /* border-radius: 0.90rem; */
+.col-md-5 >img{
+object-fit: cover;
+/* border-radius: 0.90rem; */
 width: 206px;
 height: 199px;
 border-radius: 10px 0px 0px 10px;
-
-
- 
 }
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+margin: 0;
+display: flex;
+place-items: center;
+min-width: 320px;
+min-height: 100vh;
     
 }
 

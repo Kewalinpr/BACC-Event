@@ -40,28 +40,7 @@
     
 </div>
 
-
-
-
- 
-
- 
-       
- 
- 
-
-
-
-
-
-
-
-
-       
-
-
-
-    <!-- carousel slide bar -->
+<!-- carousel slide bar -->
    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -186,6 +165,8 @@ margin: 10px;
   align-items: center;
   padding: 0;
   margin: 0;
+  -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
  
   
    
