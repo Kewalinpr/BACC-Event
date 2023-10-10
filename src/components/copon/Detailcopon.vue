@@ -19,7 +19,7 @@ function gohome() {
  
 </script>
 <template>
-  <div class="head showdow">
+ <div class="head showdow">
     <nav class="navbar">
       <div class="container-fluid">
         <button @click="gohome" class="btn sizebt" type="button">
@@ -29,13 +29,12 @@ function gohome() {
       </div>
     </nav>
   </div>
+  
 
-  <div
-    class="card"
-    v-for="coponapis in coponapi.filter((datas:any) => datas.id === parseInt(`${$route.params.id }`) )"
-  >
-    <div class="content">
-      <p v-html="coponapis.aproduct"></p>
+  <div class="card_detail" >
+
+    <div class="content_detail" v-for="coponapis in coponapi.filter((datas:any) => datas.id === parseInt(`${$route.params.id }`) )">
+      <div class="aproduct"><p v-html="coponapis.aproduct"></p></div>
       <img :src="coponapis.img_reward" class="card-img-top" alt="..." />
       <br><br>
       <div class=" d-flex justify-content-between">
@@ -49,18 +48,14 @@ function gohome() {
       <hr>
       <p3 v-html="coponapis.title1"> </p3>
       <p v-html="coponapis.condition"></p>
-    </div>
-    <button
-      type="button"
-      class="buttoncoupon"
-      data-bs-toggle="modal"
-      data-bs-target="#open"
-    >
-      กดเพื่อแลกสิทธิ์
-    </button>
-    
-  </div>
 
+      <div class="btdetail"> 
+      <button1 type="button" class="buttondetail" data-bs-toggle="modal" data-bs-target="#open"> กดเพื่อแลกสิทธ์</button1></div>
+     </div>
+  
+    </div>
+   
+ 
   <!-- Modal ยืนยันรับสิทธิ์-->
   <div
     class="modal fade "
@@ -78,7 +73,7 @@ function gohome() {
         <div class="modal-header">
           <img src="/src/assets/question.svg" class="question">
        </div>
-        <div class="modal-body"> <h5>ยืนยันรับสิทธิ์</h5>
+        <div class="modal-body"> <h5 id="h5"> ยืนยันรับสิทธิ์ </h5>
           <h6> ท่านจะยืนยันการแลกสิทธิ์หรือไม่? </h6>
         </div>
         <br><br>
@@ -108,6 +103,7 @@ function gohome() {
         
       </div>
     </div>
+
   </div>
 
   <!-- Modal otp -->
@@ -135,6 +131,7 @@ function gohome() {
                    ></otp>
 
               <!-- <p>The current OTP value is: {{ otpValue }} </p> -->
+           
              </div>
             </div>
            </div>
@@ -150,6 +147,7 @@ function gohome() {
             data-bs-target="#confirm_otp">
             ยืนยัน
           </button>
+          <!-- <img src="/src/assets/wall.jpg" alt="" class="wall" /> -->
         </div>
       </div>
     </div>
@@ -186,12 +184,48 @@ function gohome() {
   </div>
 </template>
 <style scoped>
+.aproduct{
+  text-align: center;
+}
+.card_detail{
+  padding: 50px;
+  background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
+}
+.content_detail {
+  background-color: #efefe5;
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0.9;
+ 
+}
+.buttondetail {
+    color: #fff;
+    background-color: #00A051;
+    border-color: #00A051;
+    border-radius: 30px;
+    padding: 3px;
+    width: 300px;
+    bottom:-10;
+    margin: 5;
+    font-size: 25px;
+    text-align: center;
+   
+}
+.btdetail{
+
+}
+
 .sizebt {
  color:  #cbc381;
- font-size:26px;
+ font-size:30px;
 }
 .modal-body {
   padding: 0px;
+ 
+}
+.modal-content{
+  
+  background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
 }
 .btn-cl{
   background-color: #00A051;
@@ -214,10 +248,10 @@ function gohome() {
 
  
 }
-.content > p3 {
+.content_detail > p3 {
   color: #00a051;
 }
-.content > h4 {
+.content_detail > h4 {
   color: #00a051;
 }
 hr {
@@ -246,42 +280,13 @@ img.icons {
   -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
 }
-.cardcopon {
-  background-color: antiquewhite;
-}
+
 .icon {
   width: 45px;
   height: 55px;
  padding-right: 10px;
  padding-bottom: 30px;
 }
-.card {
-  width: 500px;
-  height: 850px;
- 
-  background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
-}
-.content {
-  background-color: #efefe5;
-  padding: 30px;
-  border-radius: 20px;
-  max-height: 500vh;
-  height: 100%;
-  opacity: 0.9;
-}
-.buttoncoupon {
-  background-color: #00a051;
-  border-radius: 30px;
-  color: #ffffff;
-  padding: 0px;
-  font-size: 25px;
-  position: fixed;
-  bottom: 0px;
-  margin: 1rem;
-  width: 400px;
- height: 50px;
-
- }
 
  .modal-content {
     position: relative; 
@@ -314,9 +319,6 @@ img.icons {
 .modal-header {
  border-bottom:none;
  justify-content: center;
-
-
-
 }
 .modal-footer {
 border-top:none;
@@ -348,16 +350,12 @@ border-top:none;
     padding: 8px;
     width: 100%;
     font-size: 25px;
-}
+  }
 .fontW{
   font-weight: bold;
 }
 .fontcolor{
   color: #A58D29;
 }
-
-/* ..... */
-
-
 
 </style>

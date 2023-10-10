@@ -11,7 +11,7 @@ import Footerbar from "../components/footerbar/Footerbar.vue";
     <!-- v-for="item in 5" :key="item" -->
      <HeaderBar></HeaderBar> 
      <Coponcomponents ></Coponcomponents> 
-     <Footerbar> </Footerbar> 
+     <Footerbar></Footerbar> 
     
     </div> 
 </template>

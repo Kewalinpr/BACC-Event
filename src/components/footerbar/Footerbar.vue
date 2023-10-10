@@ -6,6 +6,7 @@ import router from "../../routers";
 </script>
 
 <template>
+  <div class="footer"> 
 <ul class="nav  nav-justified">
    <li class="nav-item">
       <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
@@ -20,10 +21,13 @@ import router from "../../routers";
       <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
   </li>
 </ul>
-
+</div>
 </template>
 
 <style scoped>
+.footer{
+  padding-top: 60px;
+}
 .nav-link>img{
   width: 42px;
 }
@@ -58,7 +62,7 @@ li a:hover:not(.active) {
   padding: 5px;
   font-size: 10px;
   position: fixed;
-  bottom: -9px;
+  bottom: -10px;
   margin-bottom: 10px;
   width: 500px;
   height: 70px;
