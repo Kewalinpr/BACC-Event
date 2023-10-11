@@ -9,16 +9,16 @@ import router from "../../routers";
   <div class="footer"> 
 <ul class="nav  nav-justified">
    <li class="nav-item">
-      <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
+      <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/iconB.png"> <br>สิทธิพิเศษ</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
+      <a class="nav-link" href="#"><img src="/src/assets/iconB.png"> <br>กิจกรรม</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
+      <a class="nav-link" href="#"><img src="/src/assets/iconB.png"> <br>ประวัติคะแนน</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
+      <a class="nav-link" @click="gohistory()"><img src="/src/assets/iconB.png"> <br><a> ประวัติแลกของรางวัล</a></a>
   </li>
 </ul>
 </div>
@@ -55,6 +55,7 @@ li a {
 li a:hover:not(.active) {
   background-color: #cbc381;
   color: #009F47;
+
 }
 .nav{
   background-color: #ffffff;

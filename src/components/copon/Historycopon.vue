@@ -20,43 +20,43 @@ function gohistory() {
   
 
 <template>
-     <div class="head showdow">
-    <nav class="navbar">
-      <div class="container-fluid">
-        <button @click="gohome" class="btn btn" type="button">
-          <i class="bi bi-chevron-compact-left"></i>
+ <div class="shadow">
+  <div class="head" >
+        <button @click="gohome" class="btn sizebt" type="button">
+          <i class="bi bi-chevron-left"></i>
         </button>
         <img src="/src/assets/logo-reward.png" alt="" class="icons" />
-      </div>
-    </nav>
-  </div>
+  </div> 
+</div>
 
   <div class="cardhitory" > 
 
     <div class="content1"> 
-       <h5 class="fontW">ประวัติแลกของรางวัล</h5>
+       <h5 class="fontW fontCenter">ประวัติแลกของรางวัล</h5>
        <div class="lines"><hr></div>
+
        <div class="content" v-for="coponhitorys in coponhitory">
     <div class="row g--1"> 
       <div class="col">
-          <div  class="icon"> <img :src="coponhitorys.img_reward" class="img-fluid" />   </div>
+          <div> <img :src="coponhitorys.img_reward" class="img-fluid" />   </div>
       </div>
         <div class="col-7">
-          <div class=" d-flex justify-content-between">
-          <div> <h6 v-html="coponhitorys.content"> </h6> </div> 
+          <div class="d-flex justify-content-between ">
+          <div class="titlecopou"> <p v-html="coponhitorys.content"> </p> </div> 
+
           <div class="row ">
-          <div class="col-6 d-flex justify-content-start"> 
+          <div class="col d-flex justify-content-start"> 
           <div class="pointimg"> <img src="src/assets/logo-A.png" class="iconA">  </div>
           <div > <p  v-html="coponhitorys.point" > </p>  </div>
         </div>
         </div>
         </div>
-   <hr>
+  <div class="linecontent"><hr></div>
           <div class=" d-flex justify-content-between ">
           <div class="">{{coponhitorys.Date}}</div>
           <div class="">{{coponhitorys.day_ex}}</div>
          </div>
-   <hr>
+  <div class="linecontent"><hr></div>
          <div class=" d-flex justify-content-between ">
          <div class="">{{coponhitorys.status1}}</div>
          <div><p v-html="coponhitorys.status2" ></p> </div>
@@ -64,41 +64,81 @@ function gohistory() {
      </div>
     
   </div>
-      <div class="line"><hr></div>
+  
+  <div class="line2"><hr></div>
   </div>
-      <p class="p">สงวนลิขสิทธิ์ 2019 ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร</p>
+  <br>
+  <!-- <div class="line1"><hr></div> -->
+      <p class="p fontCenter">สงวนลิขสิทธิ์ 2019 ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร</p>
 </div>
 
 </div>
       <ul class="nav  nav-justified">
         <li class="nav-item">
-           <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/footericon.png"> <br>สิทธิพิเศษ</a>
+           <a class="nav-link " aria-current="page" href="#"><img src="/src/assets/iconB.png"> <br>สิทธิพิเศษ</a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>กิจกรรม</a>
+           <a class="nav-link" href="#"><img src="/src/assets/iconB.png"> <br>กิจกรรม</a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="#"><img src="/src/assets/footericon.png"> <br>ประวัติคะแนน</a>
+           <a class="nav-link" href="#"><img src="/src/assets/iconB.png"> <br>ประวัติคะแนน</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link" @click="gohistory()"><img src="/src/assets/footericon.png"> <br><a> ประวัติแลกของรางวัล</a></a>
+          <a class="nav-link" @click="gohistory()"><img src="/src/assets/iconB.png"> <br><a> ประวัติแลกของรางวัล</a></a>
       </li>
     </ul>
 </template>
 
 
 <style scoped>
+.sizebt {
+ color:  #A58D29;
+ font-size:40px;
+}
+.head{
+  background-color: #ffffff;
+  width: 100%;
+  height:80px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: top;
+  margin-bottom: 3px;
+}
+.shadow{
+
+-webkit-box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+-moz-box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+
+}
+.titlecopou>p{
+  font-size: 15px;
+  font-weight: bold;
+}
+.img-fluid{
+border-radius: 9px;
+}
+.sizebt {
+ color:  #A58D29;
+ font-size:35px;
+
+}
+.fontCenter{
+  text-align: center;
+}
 .fontW{
   font-weight: bold;
 }
 .iconA{
-  width: 25px;
+  width: 30px;
   padding-right: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .p{
-padding-top: 50px;
+font-size: 13px;
+font-weight: bold;
 }
 .iconC{
   width: 60px;
@@ -117,7 +157,28 @@ padding: 0.8px;
  color: #C3A948;
 margin: -10px;
 opacity: 10;
-padding:  0.8px;
+padding:  0px;
+
+ }
+ .linecontent{
+  color: #000000;
+margin: -15px;
+opacity: 10;
+padding:  1px;
+padding-right: 15px;
+ }
+ .line1>hr{
+ color: #C3A948;
+margin: 15px;
+opacity: 10;
+padding:  1px;
+
+ }
+ .line2>hr{
+ color: #C3A948;
+margin: 15px;
+opacity: 10;
+padding:  1px;
 
  }
 
@@ -129,7 +190,7 @@ padding:  0.8px;
  }
  .rounded-start {
     border-bottom-left-radius: 0.25rem;
-     border-top-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
 }
 .content1>hr{
   padding: 20px;
@@ -139,35 +200,32 @@ padding:  0.8px;
   color:#00a051;
   font-size: 25px;
   padding-bottom: 20px;
+  padding-top: 50px;
 }
-.content1{
-  background-color: #efefe5;
-  border-radius: 30px;
-  padding-top: 80px;
-  padding-bottom: 20px;
-  opacity: 10;
-  font-size: 15px;
- 
- 
- opacity: 0.9;
-}
+
 .p{
 padding-top: 100px;
+
 }
 .content {
   background-color: #efefe5;
-  padding:  20px;
+  padding:  3px;
   border-radius: 30px;
-  max-height: 100vh;
-  height: 100%;
+  opacity: 0.9;
+}
+.content1 {
+
+  background-color: #efefe5;
+  padding:  15px;
+  margin: 20px;
+  border-radius: 30px;
   opacity: 0.9;
 }
 .cardhitory {
-  /* width: 500px; */
-  height: 100%;
-  padding: 18px;
-padding-bottom: 100px;
-  background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
+width: 100%;
+padding: 10px;
+padding-bottom: 150px;
+background-image: url(https://cdn.discordapp.com/attachments/953647482527686658/1157203418281168937/wall.jpg?ex=6517c12a&is=65166faa&hm=e5b858d3dab3b11aec6874e45aaa898c8243f20cf17c1a8b939708f398c438ff&);
 }
 
 .head {
@@ -182,10 +240,7 @@ img.icons {
   height: 80px;
   margin: auto;
 }
-.showdow {
-  -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
-}
+
 .nav-link>img{
   width: 42px;
 }

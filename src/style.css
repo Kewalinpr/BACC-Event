@@ -5,11 +5,6 @@ body {
   height: 100%;
   width: 100%;
 }
-
-
-
-
-
 #app {
   width: 100%;
   height: 100%;
@@ -17,13 +12,13 @@ body {
   background-color: #fff;
 }
 
-.app {
+.app{
   max-width: 500px;
   margin: auto;
   height: 100%;
   overflow-y: hidden;
 }
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -34,4 +29,4 @@ body {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

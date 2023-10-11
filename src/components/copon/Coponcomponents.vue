@@ -131,8 +131,10 @@ font-weight: bold;
 }
 
 .pivilate{
-  padding: 8px;
+  padding: 10px;
   max-width: 100%;
+  border-left: solid 1px #e0dddd;
+  border-right: solid 1px #e0dddd;
 }
 
 

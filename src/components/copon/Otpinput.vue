@@ -91,15 +91,16 @@
 .digit-box {
     height: 3rem;
     width: 3rem;
-    border: 2px solid black;
+    border: 2px solid rgb(224, 220, 220);
+    outline: 1px solid rgb(212, 212, 212);
     display: inline-block;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 15px;
+    border-radius: 7px;
+    margin: 9px;
+    padding: 10px;
     font-size: 20px;
 }
 .digit-box:focus {
-  outline: 3px solid black;
+  outline: 3px solid rgb(192, 191, 191);
 }
 
 .bounce {
